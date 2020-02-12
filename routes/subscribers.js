@@ -1,9 +1,15 @@
 const express = require('express')
 const router = express.Router()
+const Subscriber = require('../models/subscriber')
 
 // getting all
-router.get('/', (req , res)=>{
-    res.send('hello World')
+router.get('/',async (req , res)=>{
+    try{
+        const subscribers =await Subscriber.find()
+        res.json(subscribers)
+    }
+    catch(err){res.status(500).json({message:err.message})}
+    // 500: there is an error on server
 })
 //getting one
 router.get('/:id', (req , res)=>{
