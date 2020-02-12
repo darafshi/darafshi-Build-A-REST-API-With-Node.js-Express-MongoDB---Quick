@@ -10,7 +10,10 @@ const db = mongoose.connection
 db.on('error', (error)=>console.log(error))
 db.once('open', ()=>console.log('Connected to DB!'))
 
+app.use(express.json())
 
+const subscribersRouter=require('./routes/subscrubers')
+app.use('/subscribers')
 
 app.listen(3000,()=>console.log('Server Has Started!'))
 
