@@ -1,14 +1,26 @@
 GET http://localhost:3000/subscribers
 
 ###
-
-GET http://localhost:3000/subscribers/1
+GET http://localhost:3000/subscribers/5e43e5b7cfad195031e06aa9
+// 5e43df883558683e78de1e47 : Mahdi Darafshi
 
 ###
 POST http://localhost:3000/subscribers
 Content-Type: application/json
 
 {
-    "name": "mahdi",
-    "subscribedToChannel": "wen Dev simplified"
+    "name": "Mahdi Darafshi 7",
+    "subscribedToChannel": "Web Dev Simplified"
+}
+
+###
+
+DELETE http://localhost:3000/subscribers/5e43df9e3558683e78de1e4a
+
+###
+PATCH http://localhost:3000/subscribers/5e43e5b7cfad195031e06aa9
+Content-Type: application/json
+
+{
+    "name" : "darafshi"
 }
